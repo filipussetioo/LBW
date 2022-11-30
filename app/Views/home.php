@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?= view('template/header.php', ['css_dependencies' => ['']]) ?>
 </head>
 
 <body class="">
     <!-- popup -->
-    
-    <div class="overlay"></div>
-    <div class="popup">
-        <div class="contentBox">
-            <i class="far fa-times-circle fa-2x" id="close" ></i>
-            <div class="dropdown">
-                <button class="dropbtn">
-                    Choose your language <i class="fas fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <h3>Indonesia</h3>
-                    <h3>English(US)</h3>
-                    <h3>English(UK)</h3>
-                </div>
-            </div>
-        </div>
+    <div class="title-bar">
+        <div id="title">MovieKu</div>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">Trending</a></li>
+            <li><a href="#contact">Genre</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <a class="account-button" data-modal="signin-modal">Make Account</a>
     </div>
     
 
     <!-- modal signin -->
-    <div class="signin"></div>
-    <div class="signinpop">
-        <i class="fas fa-times" id="exit" ></i>
-        <h1>Login</h1>
-        <div class="signin-box">
-            <label>Email</label>
-            <input type="text" name="email">
-            <label>Password</label>
-            <input type="password" name="password">
+    <div id="modalOne" class="modal">
+      <div class="modal-content">
+        <div class="contact-form">
+          <a class="close">&times;</a>
+          <form action="/">
+            <h2>Signin</h2>
+            <div>
+              <input class="email" type="text" name="name" placeholder="Email" />
+              <input type="password" name="name" placeholder="Password" />
+
+            <button type="submit" href="/">Submit</button>
+          </form>
         </div>
-        <div class="signn">
-            <button>Sign In<i class="fa fa-arrow-right"></i></button>
-        </div>
+      </div>
     </div>
     <!-- tool -->
     <div class="tool">

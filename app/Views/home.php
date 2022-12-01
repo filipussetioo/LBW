@@ -30,7 +30,7 @@
         <div class="contact-form">
           <a class="close">&times;</a>
           <form action="/">
-            <h2>Signin</h2>
+            <h2>Signinasdasd</h2>
             <div>
               <input class="email" type="text" name="name" placeholder="Email" />
               <input type="password" name="name" placeholder="Password" />

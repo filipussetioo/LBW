@@ -3,6 +3,8 @@
 <head>
     <link rel="stylesheet" href="../assets/css/style.css">
     <script defer type="text/javascript" src="../assets/javascript/javascript.js">
+    <script defer type="text/javascript" src="../assets/javascript/js-carousel.js">
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +31,7 @@
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
    <path d="M16 3C8.832031 3 3 8.832031 3 16s5.832031 13 13 13 13-5.832031 13-13S23.167969 3 16 3zm0 2c6.085938 0 11 4.914063 11 11 0 6.085938-4.914062 11-11 11-6.085937 0-11-4.914062-11-11C5 9.914063 9.914063 5 16 5zm-1 4v10.28125l-4-4-1.40625 1.4375L16 23.125l6.40625-6.40625L21 15.28125l-4 4V9z"/> 
  </svg></div>
-<div class="container"></div>
+<div class="container" id="modal-container"></div>
 <div class="modal">
   <div class="modal-container">
     <div class="modal-left">
@@ -59,6 +61,45 @@
       </button>
   </div>
   <button class="modal-button">Click here to login</button>
+</div>
+
+<!--carousel-->
+<div class="slider-container">
+
+    <div class="slider-content">
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="1" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+        </div>
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="2" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+        </div>
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="3" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+        </div>
+
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="4" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+        </div>
+
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="5" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+        </div>
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="6" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+        </div>
+    </div>
 </div>
 
     <!-- tool -->

@@ -12,7 +12,7 @@ modalContainer.style.display = "none"
 const openModal = () => {
   modal.classList.add("is-open");
   body.style.overflow = "hidden";
-  carouselContainer.style.display="none";
+  carouselContainer.style.display = ("");
 };
 
 const closeModal = () => {

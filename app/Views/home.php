@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script defer type="text/javascript" src="../assets/javascript/javascript.js"></script>
     <script defer type="text/javascript" src="../assets/javascript/js-carousel.js"></script>
+
+    <script src="https://kit.fontawesome.com/8a2b672019.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,59 +68,35 @@
 <!--carousel-->
 <div class="slider-container">
     <div  id="trending-title">
-        <h1>Trending Movies</h1>
+        <!-- <h1>Trending Movies</h1> -->
     </div>
     <div class="slider-content">
-
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $data['results'][0]['backdrop_path']?>" alt="1" />
-            <h1 class="slider-single-title" >Black Adam</h1>
-            <h3 class="slider-single-title">
-            Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods and imprisoned just as quickly Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.
-            </h3>
-        </div>
-
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="2" />
-            <h1 class="slider-single-title">Through the Mountains</h1>
-            <h3 class="slider-single-title">
         
-            </h3>
-        </div>
-
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="3" />
-            <h1 class="slider-single-title">Through the Mountains</h1>
-            <h3 class="slider-single-title">
+            <?php foreach($data['results'] as $value): ?>
+                <div class="slider-single">
+                    <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
+                    <h1 class="slider-single-title">
+                        <?= $value['name']?>
+                    </h1>
+                    <h3 class="slider-single-title bot">
+                        <div class="slider-single-detail text">
+                            <?php if(!empty($value['overview'])): ?>
+                                <?= $value['overview']?>
+                            <?php endif;?>
+                            <?php if(empty($value['overview'])): ?>
+                                <p>Deskripsi untuk film ini belum tersedia.</p>
+                            <?php endif;?>
+                        </div>
+                        <div class="slider-single-detail vote">
+                            <h4>Vote Average</h4>
+                            <?= $value['vote_average']?>
+                            <img class="slider-single-image small" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
+                        </div>
+                    </h3>
+                </div>
+            <?php endforeach; ?>
         
-            </h3>
-        </div>
-
-
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="4" />
-            <h1 class="slider-single-title">Through the Mountains</h1>
-            <h3 class="slider-single-title">
         
-            </h3>
-        </div>
-
-
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="5" />
-            <h1 class="slider-single-title">Through the Mountains</h1>
-            <h3 class="slider-single-title">
-        
-            </h3>
-        </div>
-
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="6" />
-            <h1 class="slider-single-title">Through the Mountains</h1>
-            <h3 class="slider-single-title">
-        
-            </h3>
-        </div>
     </div>
 </div>
 

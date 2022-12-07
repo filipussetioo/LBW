@@ -51,7 +51,7 @@
       <p class="sign-up">Don't have an account? <a href="#">Sign up now</a></p>
     </div>
     <div class="modal-right">
-        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="">
+        <img src="https://image.tmdb.org/t/p/w500/7IkQm8L0FjECw38jFLCJ6t510nZ.jpg" alt="">
     </div>
     <button class="icon-button close-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -70,7 +70,7 @@
     <div class="slider-content">
 
         <div class="slider-single">
-            <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="1" />
+            <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $data['results'][0]['backdrop_path']?>" alt="1" />
             <h1 class="slider-single-title" >Black Adam</h1>
             <h3 class="slider-single-title">
             Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods and imprisoned just as quickly Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.
@@ -314,35 +314,6 @@
     
 
 </body>
-<script>
-    const popup = document.querySelector('.popup');
-    const close = document.querySelector('#close');
-    const overlay = document.querySelector('.overlay');
-    // const signinbtn = document.querySelector('.signin-btn');
-    // const signin = document.querySelector('.signin');
-    // const signinpop = document.querySelector('.signinpop');
-    // const exit = document.querySelector('#exit');
-
-    window.onload = function(){
-        setTimeout(function(){
-            popup.style.display = "block";
-            overlay.style.display = "block";
-        }, 1000)
-    }
-    close.addEventListener('click',()=>{
-        popup.style.display = "none";
-        overlay.style.display = "none";
-    })
-    // signinbtn.onclick = function(){
-    //     signin.style.display = "block";
-    //     signinpop.style.display = "block";
-    // }
-    exit.onclick = function(){
-        signin.style.display = "none";
-        signinpop.style.display = "none";
-    }
-
-</script>
 <script src="../dist/js/main.js"></script>
         
 </html>

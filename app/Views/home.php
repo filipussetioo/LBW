@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer type="text/javascript" src="../assets/javascript/javascript.js">
+    <script defer type="text/javascript" src="../assets/javascript/js-carousel.js">
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,23 +26,102 @@
         <a class="account-button" data-modal="signin-modal">Make Account</a>
     </div>
     
-
-    <!-- modal signin -->
-    <div id="modalOne" class="modal">
-      <div class="modal-content">
-        <div class="contact-form">
-          <a class="close">&times;</a>
-          <form action="/">
-            <h2>Signin</h2>
-            <div>
-              <input class="email" type="text" name="name" placeholder="Email" />
-              <input type="password" name="name" placeholder="Password" />
-
-            <button type="submit" href="/">Submit</button>
-          </form>
-        </div>
+<!--login modal-->
+ <div class="scroll-down">SCROLL DOWN
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+   <path d="M16 3C8.832031 3 3 8.832031 3 16s5.832031 13 13 13 13-5.832031 13-13S23.167969 3 16 3zm0 2c6.085938 0 11 4.914063 11 11 0 6.085938-4.914062 11-11 11-6.085937 0-11-4.914062-11-11C5 9.914063 9.914063 5 16 5zm-1 4v10.28125l-4-4-1.40625 1.4375L16 23.125l6.40625-6.40625L21 15.28125l-4 4V9z"/> 
+ </svg></div>
+<div class="container" id="modal-container"></div>
+<div class="modal">
+  <div class="modal-container">
+    <div class="modal-left">
+      <h1 class="modal-title">Welcome!</h1>
+      <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
+      <div class="input-block">
+        <label for="email" class="input-label">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email">
       </div>
+      <div class="input-block">
+        <label for="password" class="input-label">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div>
+      <div class="modal-buttons">
+        <a href="" class="">Forgot your password?</a>
+        <button class="input-button">Login</button>
+      </div>
+      <p class="sign-up">Don't have an account? <a href="#">Sign up now</a></p>
     </div>
+    <div class="modal-right">
+        <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="">
+    </div>
+    <button class="icon-button close-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <path d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z"></path>
+</svg>
+      </button>
+  </div>
+  <button class="modal-button">Click here to login</button>
+</div>
+
+<!--carousel-->
+<div class="slider-container">
+    <div  id="trending-title">
+        <h1>Trending Movies</h1>
+    </div>
+    <div class="slider-content">
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg" alt="1" />
+            <h1 class="slider-single-title" >Black Adam</h1>
+            <h3 class="slider-single-title">
+            Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods and imprisoned just as quickly Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.
+            </h3>
+        </div>
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="2" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+            <h3 class="slider-single-title">
+        
+            </h3>
+        </div>
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="3" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+            <h3 class="slider-single-title">
+        
+            </h3>
+        </div>
+
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="4" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+            <h3 class="slider-single-title">
+        
+            </h3>
+        </div>
+
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="5" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+            <h3 class="slider-single-title">
+        
+            </h3>
+        </div>
+
+        <div class="slider-single">
+            <img class="slider-single-image" src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg" alt="6" />
+            <h1 class="slider-single-title">Through the Mountains</h1>
+            <h3 class="slider-single-title">
+        
+            </h3>
+        </div>
+    </div>
+</div>
+
     <!-- tool -->
     <div class="tool">
         <div class="menu-btn">

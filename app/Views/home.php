@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script defer type="text/javascript" src="../assets/javascript/javascript.js">
-    <script defer type="text/javascript" src="../assets/javascript/js-carousel.js">
-    
+    <script defer type="text/javascript" src="../assets/javascript/javascript.js"></script>
+    <script defer type="text/javascript" src="../assets/javascript/js-carousel.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

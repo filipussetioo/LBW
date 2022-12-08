@@ -89,11 +89,30 @@
                         <div class="slider-single-detail vote">
                             <h4>Vote Average</h4>
                             <?= $value['vote_average']?>
-                            <img class="slider-single-image small" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
+                            <!-- <img class="slider-single-image small" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>"> -->
                         </div>
                     </h3>
                 </div>
             <?php endforeach; ?>
+        
+    </div>
+</div>
+
+<div class="slider-container2">
+    <div  id="trending-title">
+        <h1>Trending Series</h1>
+    </div>
+    <div class="slider-content2">
+        <?php foreach($dataSeries['results'] as $valueSeries):?>
+        <div class="slider-single2">
+            <img class="slider-single-image2" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $valueSeries['backdrop_path']?>" alt="1" />
+            <h1 class="slider-single-title2" ><?= $valueSeries['name'] ?></h1>
+            <h3 class="slider-single-title2">
+                <?= $valueSeries['overview']?>
+            </h3>
+        </div>
+        <?php endforeach?>
+
         
     </div>
 </div>

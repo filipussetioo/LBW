@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script defer type="text/javascript" src="../assets/javascript/javascript.js"></script>
     <script defer type="text/javascript" src="../assets/javascript/js-carousel.js"></script>
+
+    <script src="https://kit.fontawesome.com/8a2b672019.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,19 +68,32 @@
 <!--carousel-->
 <div class="slider-container">
     <div  id="trending-title">
-        <h1>Trending Movies</h1>
+        <!-- <h1>Trending Movies</h1> -->
     </div>
     <div class="slider-content">
-        <?php foreach($data['results'] as $value):?>
-        <div class="slider-single">
-            <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>" alt="1" />
-            <h1 class="slider-single-title" ><?= $value['title'] ?></h1>
-            <h3 class="slider-single-title">
-                <?= $value['overview']?>
-            </h3>
-        </div>
-        <?php endforeach?>
-
+            <?php foreach($data['results'] as $value): ?>
+                <div class="slider-single">
+                    <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
+                    <h1 class="slider-single-title">
+                        <?= $value['name']?>
+                    </h1>
+                    <h3 class="slider-single-title bot">
+                        <div class="slider-single-detail text">
+                            <?php if(!empty($value['overview'])): ?>
+                                <?= $value['overview']?>
+                            <?php endif;?>
+                            <?php if(empty($value['overview'])): ?>
+                                <p>Deskripsi untuk film ini belum tersedia.</p>
+                            <?php endif;?>
+                        </div>
+                        <div class="slider-single-detail vote">
+                            <h4>Vote Average</h4>
+                            <?= $value['vote_average']?>
+                            <img class="slider-single-image small" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
+                        </div>
+                    </h3>
+                </div>
+            <?php endforeach; ?>
         
     </div>
 </div>

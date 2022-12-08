@@ -68,12 +68,31 @@
         <h1>Trending Movies</h1>
     </div>
     <div class="slider-content">
-        <?php foreach($data['results'] as $value):?>
+        <?php foreach($dataMovies['results'] as $value):?>
         <div class="slider-single">
             <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>" alt="1" />
             <h1 class="slider-single-title" ><?= $value['title'] ?></h1>
             <h3 class="slider-single-title">
                 <?= $value['overview']?>
+            </h3>
+        </div>
+        <?php endforeach?>
+
+        
+    </div>
+</div>
+
+<div class="slider-container2">
+    <div  id="trending-title">
+        <h1>Trending Series</h1>
+    </div>
+    <div class="slider-content2">
+        <?php foreach($dataSeries['results'] as $valueSeries):?>
+        <div class="slider-single2">
+            <img class="slider-single-image2" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $valueSeries['backdrop_path']?>" alt="1" />
+            <h1 class="slider-single-title2" ><?= $valueSeries['name'] ?></h1>
+            <h3 class="slider-single-title2">
+                <?= $valueSeries['overview']?>
             </h3>
         </div>
         <?php endforeach?>

@@ -20,7 +20,7 @@
     <div class="title-bar">
         <h3 id="title">MovieKu</h3>
         <ul>
-            <li><a class="active" href="#home">Home</a></li>
+            <li><a class="active" href="home">Home</a></li>
             <li><a href="#news">Trending</a></li>
             <li><a href="#contact">Genre</a></li>
             <li><a href="#about">About</a></li>
@@ -71,7 +71,6 @@
         <!-- <h1>Trending Movies</h1> -->
     </div>
     <div class="slider-content">
-        
             <?php foreach($data['results'] as $value): ?>
                 <div class="slider-single">
                     <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
@@ -95,7 +94,6 @@
                     </h3>
                 </div>
             <?php endforeach; ?>
-        
         
     </div>
 </div>

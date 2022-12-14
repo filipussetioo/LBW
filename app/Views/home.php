@@ -1,33 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script defer type="text/javascript" src="../assets/javascript/javascript.js"></script>
-    <script defer type="text/javascript" src="../assets/javascript/js-carousel.js"></script>
-
-    <script src="https://kit.fontawesome.com/8a2b672019.js" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <title>Home</title>
     <?= view('template/header.php', ['css_dependencies' => ['']]) ?>
 </head>
 
 <body class="">
-    <!-- popup -->
-    <div class="title-bar">
-        <h3 id="title">MovieKu</h3>
-        <ul>
-            <li><a class="active" href="home">Home</a></li>
-            <li><a href="#news">Trending</a></li>
-            <li><a href="#contact">Genre</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-        <a class="account-button" data-modal="signin-modal">Make Account</a>
-    </div>
-    
+    <?= view('template/navbar.php', ['css_dependencies' => ['']]) ?>
 <!--login modal-->
  <div class="scroll-down">SCROLL DOWN
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -75,7 +54,7 @@
                 <div class="slider-single">
                     <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
                     <h1 class="slider-single-title">
-                        <?= $value['name']?>
+                        <?= $value['title']?>
                     </h1>
                     <h3 class="slider-single-title bot">
                         <div class="slider-single-detail text">

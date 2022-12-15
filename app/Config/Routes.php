@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/watchlist', 'Watchlist::index');
 
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

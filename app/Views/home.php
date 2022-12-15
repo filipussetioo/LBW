@@ -13,6 +13,7 @@
    <path d="M16 3C8.832031 3 3 8.832031 3 16s5.832031 13 13 13 13-5.832031 13-13S23.167969 3 16 3zm0 2c6.085938 0 11 4.914063 11 11 0 6.085938-4.914062 11-11 11-6.085937 0-11-4.914062-11-11C5 9.914063 9.914063 5 16 5zm-1 4v10.28125l-4-4-1.40625 1.4375L16 23.125l6.40625-6.40625L21 15.28125l-4 4V9z"/> 
  </svg></div>
 <div class="container" id="modal-container"></div>
+<form method="POST" action="<?= base_url(); ?>/home/process">
 <div class="modal">
   <div class="modal-container">
     <div class="modal-left">
@@ -43,7 +44,7 @@
   </div>
   <button class="modal-button">Click here to login</button>
 </div>
-
+</form>
 <!--carousel-->
 <div class="slider-container">
     <div  id="trending-title">
@@ -78,7 +79,7 @@
 
 <div class="slider-container2">
     <div  id="trending-title">
-        <h1>Trending Series</h1>
+        <h1>Trending Series <?= session()->get('name'); ?></h1>
     </div>
     <div class="slider-content2">
         <?php foreach($dataSeries['results'] as $valueSeries):?>

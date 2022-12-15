@@ -2,8 +2,18 @@
 
 namespace App\Controllers;
 
+use Config\App;
+use App\Models\Users;
+
 class Home extends BaseController
-{
+{   
+    protected $users_model;
+
+    public function __construct()
+    {
+        $this->users_model = new \App\Models\Users();
+    }
+
     public function index()
     {
         $readApiMovies = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US&page=1');
@@ -23,8 +33,33 @@ class Home extends BaseController
         return view('home.php',[
             'data' => $data,
             'dataMovies' => $dataMovies,
-            'dataSeries' => $dataSeries
+            'dataSeries' => $dataSeries,
         ]); 
         
+    }
+    public function process()
+    {
+        $users = new Users();
+        $username = $this->request->getVar('username');
+        $password = $this->request->getVar('password');
+        $dataUser = $users->where([
+            'username' => $username,
+        ])->first();
+        if ($dataUser) {
+            if (password_verify($password, $dataUser->password)) {
+                session()->set([
+                    'username' => $dataUser->username,
+                    'name' => $dataUser->name,
+                    'logged_in' => TRUE
+                ]);
+                return redirect()->to(base_url('home'));
+            } else {
+                session()->setFlashdata('error', 'Username & Password Salah');
+                return redirect()->back();
+            }
+        } else {
+            session()->setFlashdata('error', 'Username & Password Salah');
+            return redirect()->back();
+        }
     }
 }

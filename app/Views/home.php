@@ -84,7 +84,7 @@
                             <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
                                 <?= csrf_field();
                                     session()->set([
-                                    'movieIndex'=> echo "<script>slide</script>";
+                                    // 'movieIndex'=> echo "<script>slide</script>";
                                 ]);?>
                                 <button type="submit" class="register-button">Add to Watchlist</button>
                             </form>    

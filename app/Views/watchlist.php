@@ -12,28 +12,16 @@
     <div>
         <h1>Your Watchlist</h1>
     </div>
-    <!-- <?php foreach($data as $value):?>
+    <?php foreach($watchlist_data as $value):?>
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces" alt="Card image cap">
         <div class="card-body">
             <p class="card-text"><?= $watchlist_data['watchlist_title']?></p>
         </div>
     </div>
-    <?php endforeach; ?> -->
+    <?php endforeach; ?>
     <!-- echo $rowData["watchlist_title"].'<br>'; -->
-    <?php if(mysqli_num_rows($queryResult) > 0): ?>
-            <?php while($rowData = mysqli_fetch_array($queryResult)):?>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces<?= $data['poster_path']?>" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><?=$rowData['watchlistId']?></p>
-                        <p class="card-text"><?=$rowData['watchlist_title']?></p>
-                        <p class="card-text"><?=$rowData['username']?></p>
-                        <p class="card-text"><?=$rowData['streaming_platform']?></p>
-                    </div>
-                </div> <br>
-            <?php endwhile; ?>
-    <?php endif; ?>
+    
 
     
     

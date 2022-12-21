@@ -85,7 +85,7 @@
 
                                 <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
 
-                                <button type="submit" class="register-button">Add to Watchlist</button>
+                                <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
                             </form>    
                         </div>
                 </div>

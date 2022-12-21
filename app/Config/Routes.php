@@ -40,7 +40,7 @@ $routes->get('/home2', 'Home2::index');
 $routes->get('/register', 'Register::index');
 $routes->post('/register/process', 'Register::process');
 $routes->get('/watchlist', 'Watchlist::index');
-$routes->post('/home/process', 'Home::process');
+$routes->get('/home/logout', 'Home::logout');
 $routes->post('/home/login', 'Home::login');
 
 

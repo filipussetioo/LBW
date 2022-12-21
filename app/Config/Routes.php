@@ -1,6 +1,7 @@
 <?php
 
 namespace Config;
+use App\Views\home;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -42,6 +43,7 @@ $routes->post('/register/process', 'Register::process');
 $routes->get('/watchlist', 'Watchlist::index');
 $routes->get('/home/logout', 'Home::logout');
 $routes->post('/home/login', 'Home::login');
+$routes->post('/home/addWatchlist', 'Home::addWatchlist');
 
 
 /*

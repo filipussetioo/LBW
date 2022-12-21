@@ -13,11 +13,11 @@
    <path d="M16 3C8.832031 3 3 8.832031 3 16s5.832031 13 13 13 13-5.832031 13-13S23.167969 3 16 3zm0 2c6.085938 0 11 4.914063 11 11 0 6.085938-4.914062 11-11 11-6.085937 0-11-4.914062-11-11C5 9.914063 9.914063 5 16 5zm-1 4v10.28125l-4-4-1.40625 1.4375L16 23.125l6.40625-6.40625L21 15.28125l-4 4V9z"/> 
  </svg></div>
 <div class="container" id="modal-container"></div>
-        <?php if (!empty(session()->getFlashdata('error'))) : ?>
+
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <?php echo session()->getFlashdata('error'); ?>
+
             </div>
-        <?php endif; ?>
+
 <form method="POST" action="<?= base_url(); ?>/home/login">
 <?= csrf_field(); ?>
 <div class="modal">
@@ -54,10 +54,10 @@
 <!--carousel-->
 <div class="slider-container">
     <div  id="trending-title">
-        <!-- <h1>Trending Movies</h1> -->
+        <h1>Trending Movies</h1>
     </div>
     <div class="slider-content">
-            <?php foreach($dataMovies['results'] as $value): ?>
+            <?php foreach($dataMovies['results'] as $key =>$value): ?>
                 <div class="slider-single">
                     <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
                     <h1 class="slider-single-title">
@@ -75,6 +75,15 @@
                         <div class="slider-single-detail vote">
                             <h4>Vote Average</h4>
                             <?= $value['vote_average']?>
+                        </div>
+                        <div>
+                            <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
+                                <?= csrf_field();
+                                    session()->set([
+                                    'movieIndex'=> echo "<script>slide</script>";
+                                ]);?>
+                                <button type="submit" class="register-button">Add to Watchlist</button>
+                            </form>    
                         </div>
                     </h3>
                 </div>

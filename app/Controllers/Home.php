@@ -4,10 +4,12 @@ namespace App\Controllers;
 
 use Config\App;
 use App\Models\Users;
+use App\Models\Watchlist;
 
 class Home extends BaseController
 {   
     protected $users_model;
+    public $key = 0;
 
     public function __construct()
     {
@@ -33,7 +35,8 @@ class Home extends BaseController
             'data' => $data,
             'dataMovies' => $dataMovies,
             'dataSeries' => $dataSeries,
-        ]); 
+        ]);
+        
        
     }
     public function login()
@@ -65,6 +68,39 @@ class Home extends BaseController
     public function logout()
     {       
         session()->destroy();
+        
         return redirect()->to('/');
+    }
+    public function addWatchlist(){
+        if(session()->get('name')==""){
+            $message = "you have to login first!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            return redirect()->to('/');
+        }
+        else{
+            $readApiMovies = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US&page=1');
+            $dataMovies = json_decode($readApiMovies,true);
+            $watchlist = new Watchlist();
+            $title = session()->get('movieIndex');
+            $streaming= session()->get('movieIndex');
+            $username = session()->get('username');
+            
+            $insert = $watchlist->insert([
+                'watchlist_title' => $title,
+                'streaming_platform' =>$streaming,
+                'username' =>$username
+            ]);
+
+            if($insert){
+                echo "Data Berhasil diinsert";
+            }
+            else {
+                echo "<pre>";
+                echo print_r($watchlist->errors());
+                echo "</pre>";
+            }
+            // return redirect()->to('/');
+        }
+        
     }
 }

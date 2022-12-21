@@ -78,10 +78,7 @@
                         </div>
                         <div>
                             <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
-                                <?= csrf_field();
-                                    session()->set([
-                                    'movieIndex'=> echo "<script>slide</script>";
-                                ]);?>
+                                <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
                                 <button type="submit" class="register-button">Add to Watchlist</button>
                             </form>    
                         </div>

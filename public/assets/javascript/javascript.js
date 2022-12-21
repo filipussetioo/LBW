@@ -1,13 +1,31 @@
 const body = document.querySelector("body");
 const modal = document.querySelector(".modal");
 const modalButton = document.querySelector(".account-button");
-console.log(modalButton)
+// console.log(modalButton)
 const closeButton = document.querySelector(".close-button");
 const scrollDown = document.querySelector(".scroll-down");
 let isOpened = false;
 const modalContainer = document.getElementById("modal-container");
 const carouselContainer = document.querySelector(".slider-container")
+const vote = document.querySelectorAll(".slider-single-detail.vote");
+const voteValue = document.querySelectorAll('#vote-value');
 modalContainer.style.display = "none"
+
+
+window.addEventListener("load", (event) => {
+    for(var i=0; i<vote.length; i++){
+        if(parseFloat(voteValue[i].innerText) >= 7.0){
+            vote[i].classList.add("green");
+            console.log(vote[i].innerText);
+        }
+        else if(parseFloat(voteValue[i].innerText) <7.0 && parseFloat(voteValue[i].innerText) > 4.0){
+            vote[i].classList.add("yellow");
+        }
+        else if(parseFloat(voteValue[i].innerText) <= 4.0){
+            vote[i].classList.add("red");
+        }
+    } 
+});
 
 const openModal = () => {
     if(!modalButton.classList.contains('session')){
@@ -495,3 +513,5 @@ function goToIndexSlide(index) {
 }
 
 slideInitial2();
+
+

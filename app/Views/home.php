@@ -82,12 +82,10 @@
                     </h3>
                     <div class="slider-single-title">
                             <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
+
                                 <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
-                                <?= csrf_field();
-                                    session()->set([
-                                    // 'movieIndex'=> echo "<script>slide</script>";
-                                ]);?>
-                                <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist <i class="fa-solid fa-square-plus"></i></button>
+
+                                <button type="submit" class="register-button">Add to Watchlist</button>
                             </form>    
                         </div>
                 </div>

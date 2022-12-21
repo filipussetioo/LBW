@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Watchlist;
 
-// use App\Models\Watchlist;
+class Watchlists extends BaseController
+{   
+    protected $model;
 
-
-
-class Watchlist extends BaseController
-{
-    
-
+    public function __construct(){
+        $this->model = new \App\Models\Watchlist();
+    }
     public function index()
     {
         $readApiMovies = file_get_contents('https://api.themoviedb.org/3/movie/724495?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US');
@@ -25,34 +25,21 @@ class Watchlist extends BaseController
         // $data_array = array(
         //     'datalist' => $data
         // );
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "lbw";
+        $username = session()->get('username');
+        $db = \Config\Database::connect();
+        $builder = $db->table('watchlist');
+        $builder->select('watchlist_title, watchlistId, streaming_platform, username');
+        $builder->where('username',$username);
 
-        $conn = mysqli_connect($servername,$username,$password,$dbname);
-
-        // $watchList = new Watchlist();
-        // $this->model->select('watchlist_title');
-        $query = "SELECT * FROM watchlist";
-        $queryResult = $conn->query($query);
+        $watchlist_data = $builder->get()->getResultArray();
+        $watchlist_data = $watchlist_data[0];
+        
         return view('watchlist.php',[
             'data' => $data,
             'dataMovies' => $dataMovies,
             'dataSeries' => $dataSeries,
-            'queryResult' => $queryResult,
+            'watchlist_data' => $watchlist_data
         ]); 
         
     }
-
-    
-    
-
-    // public function index(){
-    //     $watchList = new WatchList();
-    //     $data = $watchList->select('watchlist_title');
-    //     return view('watchlist.php',[
-    //         'data' => $data
-    //     ]);
-    // }
 }

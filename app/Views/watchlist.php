@@ -14,9 +14,9 @@
     </div>
     <!-- <?php foreach($data as $value):?>
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces<?= $data['poster_path']?>" alt="Card image cap">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces" alt="Card image cap">
         <div class="card-body">
-            <p class="card-text"><?= $data['overview']?></p>
+            <p class="card-text"><?= $watchlist_data['watchlist_title']?></p>
         </div>
     </div>
     <?php endforeach; ?> -->

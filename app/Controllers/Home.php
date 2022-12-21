@@ -29,7 +29,6 @@ class Home extends BaseController
         // $data_array = array(
         //     'datalist' => $data
         // );
-        
         return view('home.php',[
             'data' => $data,
             'dataMovies' => $dataMovies,
@@ -52,7 +51,7 @@ class Home extends BaseController
                     'name' => $dataUser->name,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('/home2'));
+                return redirect()->to(base_url('/'));
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();
@@ -61,5 +60,11 @@ class Home extends BaseController
             session()->setFlashdata('error', 'Username & Password Salah');
             return redirect()->back();
         }
+    }
+    
+    public function logout()
+    {       
+        session()->destroy();
+        return redirect()->to('/');
     }
 }

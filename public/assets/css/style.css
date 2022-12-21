@@ -75,6 +75,12 @@ body{
     border: 2px solid white;
     transition: 0.3s;
 }
+.account{
+  padding: 1%;
+    color: white;
+    border: 2px solid white;
+    transition: 0.3s;
+}
 .account-button:hover{
     color: black;
     background-color: white;

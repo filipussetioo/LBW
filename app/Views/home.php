@@ -78,7 +78,9 @@
                         </div>
                         <div>
                             <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
+
                                 <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
+
                                 <button type="submit" class="register-button">Add to Watchlist</button>
                             </form>    
                         </div>

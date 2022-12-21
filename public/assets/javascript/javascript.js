@@ -10,9 +10,14 @@ const carouselContainer = document.querySelector(".slider-container")
 modalContainer.style.display = "none"
 
 const openModal = () => {
-  modal.classList.add("is-open");
-  body.style.overflow = "hidden";
-  carouselContainer.style.display = ("");
+    if(!modalButton.classList.contains('session')){
+        modal.classList.add("is-open");
+        body.style.overflow = "hidden";
+        carouselContainer.style.display = ("");
+    }else{
+        console.log('session running');
+    }
+  
 };
 
 const closeModal = () => {

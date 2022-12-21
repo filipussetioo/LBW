@@ -86,6 +86,11 @@ body{
     background-color: white;
     cursor: pointer;
 }
+.account-button.session:hover{
+  cursor: default;
+  background-color: transparent;
+  color: white;
+}
 
 /*modal signin*/
 .container {
@@ -351,7 +356,7 @@ body{
   .slider-container .slider-content {
     position: relative;
     left: 50%;
-    top: 40%;
+    top: 35%;
     width: 70%;
     height: 60%;
     transform: translate(-50%, -50%);
@@ -505,30 +510,28 @@ body{
     z-index: 3;
     display: block;
     right: 85%;
-    top: 50%;
-    color: #ffffff;
-    transform: translateY(-50%);
+    top: 40%;
+    color: #000;
+    transform: translateY(-20%);
     padding: 20px 15px;
-    border-top: 2px solid #fdc84b;
-    border-right: 2px solid #fdc84b;
-    border-bottom: 2px solid #fdc84b;
-    border-left: 2px solid #fdc84b;
     margin-right: -2px;
+  }
+  .slider-container .slider-left i:hover{
+    cursor: pointer;
   }
   .slider-container .slider-right {
     position: absolute;
     z-index: 3;
     display: block;
     left: 85%;
-    top: 50%;
-    color: #ffffff;
-    transform: translateY(-50%);
+    top: 40%;
+    color: #000;
+    transform: translateY(-20%);
     padding: 20px 15px;
-    border-top: 2px solid #fdc84b;
-    border-right: 2px solid #fdc84b;
-    border-bottom: 2px solid #fdc84b;
-    border-left: 2px solid #fdc84b;
     margin-left: -2px;
+  }
+  .slider-container .slider-right i:hover{
+    cursor: pointer;
   }
   .slider-container .not-visible {
     display: none !important;

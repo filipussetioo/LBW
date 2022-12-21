@@ -74,8 +74,9 @@ function initArrows() {
     }
     const leftArrow = document.createElement('a')
     const iLeft = document.createElement('i');
-    iLeft.classList.add('fa')
-    iLeft.classList.add('fa-arrow-left')
+    iLeft.classList.add('fa-solid')
+    iLeft.classList.add('fa-circle-left')
+    iLeft.classList.add('fa-3x')
     leftArrow.classList.add('slider-left')
     leftArrow.appendChild(iLeft)
     leftArrow.addEventListener('click', () => {
@@ -83,8 +84,9 @@ function initArrows() {
     })
     const rightArrow = document.createElement('a')
     const iRight = document.createElement('i');
-    iRight.classList.add('fa')
-    iRight.classList.add('fa-arrow-right')
+    iRight.classList.add('fa-solid')
+    iRight.classList.add('fa-circle-right')
+    iRight.classList.add('fa-3x')
     rightArrow.classList.add('slider-right')
     rightArrow.appendChild(iRight)
     rightArrow.addEventListener('click', () => {

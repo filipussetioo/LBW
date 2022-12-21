@@ -54,7 +54,7 @@
 <!--carousel-->
 <div class="slider-container">
     <div  id="trending-title">
-        <h1>Trending Movies</h1>
+        <h2>Trending Movies</h2>
     </div>
     <div class="slider-content">
             <?php foreach($dataMovies['results'] as $key =>$value): ?>

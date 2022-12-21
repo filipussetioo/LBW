@@ -35,9 +35,9 @@ class Home extends BaseController
             'dataMovies' => $dataMovies,
             'dataSeries' => $dataSeries,
         ]); 
-        
+       
     }
-    public function process()
+    public function login()
     {
         $users = new Users();
         $username = $this->request->getVar('username');
@@ -52,7 +52,7 @@ class Home extends BaseController
                     'name' => $dataUser->name,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('home'));
+                return redirect()->to(base_url('/home2'));
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();

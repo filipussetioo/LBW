@@ -6,5 +6,9 @@
             <li><a href="#contact">Genre</a></li>
             <li><a href="/watchlist">Watchlist</a></li>
         </ul>
-    <a class="account-button" data-modal="signin-modal">Make Account</a>
+        <?php if (session()->get('name') == ""): ?>
+            <a class="account-button" data-modal="signin-modal">Login / Register</a>
+        <?php else:?>
+            <a class="account-button" ><?= strtoupper(session()->get('name')) ?></a>
+        <?php endif;?>
 </div>

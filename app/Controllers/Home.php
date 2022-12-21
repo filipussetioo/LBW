@@ -78,11 +78,12 @@ class Home extends BaseController
             return redirect()->to('/');
         }
         else{
-            $readApiMovies = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US&page=1');
+            $id = $this->request->getVar('id-film');
+            $readApiMovies = file_get_contents("https://api.themoviedb.org/3/movie/$id?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US");
             $dataMovies = json_decode($readApiMovies,true);
             $watchlist = new Watchlist();
-            $title = session()->get('movieIndex');
-            $streaming= session()->get('movieIndex');
+            $title = $dataMovies['original_title'];
+            $streaming= "netflix";
             $username = session()->get('username');
             
             $insert = $watchlist->insert([

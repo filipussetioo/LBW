@@ -1,9 +1,15 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Watchlist;
 
-class Watchlist extends BaseController
-{
+class Watchlists extends BaseController
+{   
+    protected $model;
+
+    public function __construct(){
+        $this->model = new \App\Models\Watchlist();
+    }
     public function index()
     {
         $readApiMovies = file_get_contents('https://api.themoviedb.org/3/movie/724495?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US');
@@ -19,11 +25,20 @@ class Watchlist extends BaseController
         // $data_array = array(
         //     'datalist' => $data
         // );
+        $username = session()->get('username');
+        $db = \Config\Database::connect();
+        $builder = $db->table('watchlist');
+        $builder->select('watchlist_title, watchlistId, streaming_platform, username');
+        $builder->where('username',$username);
+
+        $watchlist_data = $builder->get()->getResultArray();
+        $watchlist_data = $watchlist_data[0];
         
         return view('watchlist.php',[
             'data' => $data,
             'dataMovies' => $dataMovies,
-            'dataSeries' => $dataSeries
+            'dataSeries' => $dataSeries,
+            'watchlist_data' => $watchlist_data
         ]); 
         
     }

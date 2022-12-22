@@ -20,5 +20,10 @@
         </div>
     </div>
     <?php endforeach; ?>
+    <!-- echo $rowData["watchlist_title"].'<br>'; -->
+    
+
+    
+    
 </body>
 </html>

@@ -54,7 +54,7 @@
 <!--carousel-->
 <div class="slider-container">
     <div  id="trending-title">
-        <h1>Trending Movies</h1>
+        <h2>Trending Movies</h2>
     </div>
     <div class="slider-content">
             <?php foreach($dataMovies['results'] as $key =>$value): ?>
@@ -73,18 +73,21 @@
                             <?php endif;?>
                         </div>
                         <div class="slider-single-detail vote">
-                            <h4>Vote Average</h4>
-                            <?= $value['vote_average']?>
+                            <h4>Vote Avg.</h4>
+                            <p id="vote-value">
+                                <?= $value['vote_average']?>
+                            </p>
                         </div>
-                        <div>
+                        
+                    </h3>
+                    <div class="slider-single-title">
                             <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
 
                                 <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
 
-                                <button type="submit" class="register-button">Add to Watchlist</button>
+                                <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
                             </form>    
                         </div>
-                    </h3>
                 </div>
             <?php endforeach; ?>
         

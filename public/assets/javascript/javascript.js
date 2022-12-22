@@ -1,13 +1,31 @@
 const body = document.querySelector("body");
 const modal = document.querySelector(".modal");
 const modalButton = document.querySelector(".account-button");
-console.log(modalButton)
+// console.log(modalButton)
 const closeButton = document.querySelector(".close-button");
 const scrollDown = document.querySelector(".scroll-down");
 let isOpened = false;
 const modalContainer = document.getElementById("modal-container");
 const carouselContainer = document.querySelector(".slider-container")
+const vote = document.querySelectorAll(".slider-single-detail.vote");
+const voteValue = document.querySelectorAll('#vote-value');
 modalContainer.style.display = "none"
+
+
+window.addEventListener("load", (event) => {
+    for(var i=0; i<vote.length; i++){
+        if(parseFloat(voteValue[i].innerText) >= 7.0){
+            vote[i].classList.add("green");
+            console.log(vote[i].innerText);
+        }
+        else if(parseFloat(voteValue[i].innerText) <7.0 && parseFloat(voteValue[i].innerText) > 4.0){
+            vote[i].classList.add("yellow");
+        }
+        else if(parseFloat(voteValue[i].innerText) <= 4.0){
+            vote[i].classList.add("red");
+        }
+    } 
+});
 
 const openModal = () => {
     if(!modalButton.classList.contains('session')){
@@ -74,8 +92,9 @@ function initArrows() {
     }
     const leftArrow = document.createElement('a')
     const iLeft = document.createElement('i');
-    iLeft.classList.add('fa')
-    iLeft.classList.add('fa-arrow-left')
+    iLeft.classList.add('fa-solid')
+    iLeft.classList.add('fa-circle-left')
+    iLeft.classList.add('fa-3x')
     leftArrow.classList.add('slider-left')
     leftArrow.appendChild(iLeft)
     leftArrow.addEventListener('click', () => {
@@ -83,8 +102,9 @@ function initArrows() {
     })
     const rightArrow = document.createElement('a')
     const iRight = document.createElement('i');
-    iRight.classList.add('fa')
-    iRight.classList.add('fa-arrow-right')
+    iRight.classList.add('fa-solid')
+    iRight.classList.add('fa-circle-right')
+    iRight.classList.add('fa-3x')
     rightArrow.classList.add('slider-right')
     rightArrow.appendChild(iRight)
     rightArrow.addEventListener('click', () => {
@@ -493,3 +513,5 @@ function goToIndexSlide(index) {
 }
 
 slideInitial2();
+
+

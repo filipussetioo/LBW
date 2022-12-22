@@ -10,9 +10,13 @@ class Watchlists extends Migration
     {
         //
         $this->forge->addField([
+			'id' 		=> 		[
+				'type' => 'INT',
+				'auto_increment' => TRUE,
+			],
 			'watchlistId'          => [
 				'type'           => 'INT',
-                'auto_increment' => TRUE,
+                'constraint' 	 => '32',
 			],
 			'watchlist_title'       => [
 				'type'           => 'VARCHAR',
@@ -28,12 +32,13 @@ class Watchlists extends Migration
 			],
  
 		]);
-        $this->forge->addPrimaryKey('watchlistId',true);
+        $this->forge->addPrimaryKey('id',true);
         $this->forge->createTable('watchlist');
     }
 
     public function down()
     {
         //
+		$this->forge->dropTable('watchlist');
     }
 }

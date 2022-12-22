@@ -16,7 +16,7 @@
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces" alt="Card image cap">
         <div class="card-body">
-            <p class="card-text"><?= $watchlist_data['watchlist_title']?></p>
+            <p class="card-text"><?= $value->watchlist_title ?></p>
         </div>
     </div>
     <?php endforeach; ?>

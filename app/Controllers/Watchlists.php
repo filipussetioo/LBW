@@ -31,8 +31,8 @@ class Watchlists extends BaseController
         $builder->select('watchlist_title, watchlistId, streaming_platform, username');
         $builder->where('username',$username);
 
-        $watchlist_data = $builder->get()->getResultArray();
-        $watchlist_data = $watchlist_data[0];
+        $watchlist_data = $builder->get()->getResult();
+        // $watchlist_data = json_decode($watchlist_data);
         
         return view('watchlist.php',[
             'data' => $data,

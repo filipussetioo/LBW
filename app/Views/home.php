@@ -60,34 +60,36 @@
             <?php foreach($dataMovies['results'] as $key =>$value): ?>
                 <div class="slider-single">
                     <img class="slider-single-image" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value['backdrop_path']?>">
-                    <h1 class="slider-single-title">
-                        <?= $value['title']?>
-                    </h1>
-                    <h3 class="slider-single-title bot">
-                        <div class="slider-single-detail text">
-                            <?php if(!empty($value['overview'])): ?>
-                                <?= $value['overview']?>
-                            <?php endif;?>
-                            <?php if(empty($value['overview'])): ?>
-                                <p>Deskripsi untuk film ini belum tersedia.</p>
-                            <?php endif;?>
-                        </div>
-                        <div class="slider-single-detail vote">
-                            <h4>Vote Avg.</h4>
-                            <p id="vote-value">
-                                <?= $value['vote_average']?>
-                            </p>
-                        </div>
-                        
-                    </h3>
-                    <div class="slider-single-title">
-                            <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
+                    <div class="slider-detail">
+                        <h1 class="slider-single-title">
+                            <?= $value['title']?>
+                        </h1>
+                        <h3 class="slider-single-title bot">
+                            <div class="slider-single-detail text">
+                                <?php if(!empty($value['overview'])): ?>
+                                    <?= $value['overview']?>
+                                <?php endif;?>
+                                <?php if(empty($value['overview'])): ?>
+                                    <p>Deskripsi untuk film ini belum tersedia.</p>
+                                <?php endif;?>
+                            </div>
+                            <div class="slider-single-detail vote">
+                                <h4>Vote Avg.</h4>
+                                <p id="vote-value">
+                                    <?= $value['vote_average']?>
+                                </p>
+                            </div>
+                            
+                        </h3>
+                        <div class="slider-single-title">
+                                <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist">
 
-                                <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
+                                    <input type="text" name="id-film" id="id-film" value="<?= $value['id']?>">
 
-                                <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
-                            </form>    
+                                    <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
+                                </form>    
                         </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         
@@ -96,33 +98,41 @@
 
 <div class="slider-container2">
     <div  id="trending-title">
-        <h1>Trending Series</h1>
+        <h2>Trending Series</h2>
     </div>
     <div class="slider-content2">
         <?php foreach($dataSeries['results'] as $valueSeries):?>
         <div class="slider-single2">
             <img class="slider-single-image2" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $valueSeries['backdrop_path']?>" alt="1" />
-            <h1 class="slider-single-title2" ><?= $valueSeries['name'] ?></h1>
-            <h3 class="slider-single-title2">
-                <?php if(!empty($valueSeries['overview'])): ?>
-                    <?= $value['overview']?>
-                <?php endif;?>
-                <?php if(empty($valueSeries['overview'])): ?>
-                    <p>Deskripsi untuk film ini belum tersedia.</p>
-                <?php endif;?>
+            <div class="slider-detail">
+            <h1 class="slider-single-title2">
+                <?= $valueSeries['name'] ?>
+            </h1>
+            <h3 class="slider-single-title2 bot">
+                <div class="slider-single-detail2 text">
+                    <?php if(!empty($valueSeries['overview'])): ?>
+                        <?= $value['overview']?>
+                    <?php endif;?>
+                    <?php if(empty($valueSeries['overview'])): ?>
+                        <p>Deskripsi untuk film ini belum tersedia.</p>
+                    <?php endif;?>
+                </div>
                 <div class="slider-single-detail vote">
-                            <h4>Vote Average</h4>
-                            <?= $valueSeries['vote_average'];?>
+                    <h4>Vote Avg.</h4>
+                    <p id="vote-value">
+                        <?= $valueSeries['vote_average'];?>
+                    </p>
                 </div>
             </h3>
             <div class="slider-single-title2">
-                            <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist2">
+                    <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist2">
 
-                                <input type="text" name="id-series" id="id-film" value="<?= $valueSeries['id']?>">
+                        <input type="text" name="id-series" id="id-film" value="<?= $valueSeries['id']?>">
 
-                                <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
-                            </form>    
-                        </div>
+                        <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
+                    </form>    
+            </div>
+            </div>
         </div>
         <?php endforeach?>
 

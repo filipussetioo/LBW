@@ -9,24 +9,35 @@
 </head>
 <body>
     <?= view('template/navbar.php', ['css_dependencies' => ['']]) ?>
-    <div>
-        <h1>Your Watchlist</h1>
-    </div>
-    <?php foreach($watchlist_data as $value):?>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value->backdrop_path?>" alt="Card image cap">
-        <div class="card-body">
-            <p class="card-text"><?= $value->watchlist_title ?></p>
+    <div class="wrapper">
+        <!-- <div class="wrapper-title">
+            <h1>Your Watchlist</h1>
+        </div> -->
+        <div class="wrapper-title">
+            <p>Recommended Streaming Platform</p>
+            <h2>
+                <?=substr($watchlist_streaming_data->streaming_platform,1,strlen($watchlist_streaming_data->streaming_platform)-2)?>
+            </h2>
+                
         </div>
-    </div>
-    <?php endforeach; ?>
+        <div class="watchlist-container">
+            <?php foreach($watchlist_data as $value):?>
+                <div class="card">
+                    <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value->backdrop_path?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h3 class="card-text"><?= $value->watchlist_title ?></h3>
+                        <?php if($value->streaming_platform == "null"):?>
+                            <p>OTT tidak tersedia</p>
+                        <?php endif; ?>
+                        <?php if($value->streaming_platform != "null")  :?>
+                            <p>Tersedia di : <?= substr($value->streaming_platform,1,strlen($value->streaming_platform)-2) ?></p>
+                        <?php endif; ?>    
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     <!-- echo $rowData["watchlist_title"].'<br>'; -->
-    <div>
-        <h1>Recommended Streaming Platform</h1>
-            <p><?= 
-                $watchlist_streaming_data->streaming_platform
-                ?>
-            </P>
+    
     </div>
 </body>
 </html>

@@ -37,6 +37,8 @@ class Watchlists extends BaseController
         $watchlist_streaming_data = $builder_streaming->get()->getResult();
             if($watchlist_streaming_data[0]->streaming_platform == 'null'){
                 $watchlist_streaming_data = $watchlist_streaming_data[1];
+            }else{
+                $watchlist_streaming_data = $watchlist_streaming_data[0];
             };
         return view('watchlist.php',[
             'data' => $data,

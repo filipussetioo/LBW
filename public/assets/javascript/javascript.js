@@ -322,8 +322,9 @@ function initArrows2() {
     }
     const leftArrow2 = document.createElement('a')
     const iLeft2 = document.createElement('i');
-    iLeft2.classList.add('fa')
-    iLeft2.classList.add('fa-arrow-left')
+    iLeft2.classList.add('fa-solid')
+    iLeft2.classList.add('fa-circle-left')
+    iLeft2.classList.add('fa-3x')
     leftArrow2.classList.add('slider-left2')
     leftArrow2.appendChild(iLeft2)
     leftArrow2.addEventListener('click', () => {
@@ -331,8 +332,9 @@ function initArrows2() {
     })
     const rightArrow2 = document.createElement('a')
     const iRight2 = document.createElement('i');
-    iRight2.classList.add('fa')
-    iRight2.classList.add('fa-arrow-right')
+    iRight2.classList.add('fa-solid')
+    iRight2.classList.add('fa-circle-right')
+    iRight2.classList.add('fa-3x')
     rightArrow2.classList.add('slider-right2')
     rightArrow2.appendChild(iRight2)
     rightArrow2.addEventListener('click', () => {

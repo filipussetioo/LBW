@@ -115,6 +115,14 @@
                             <?= $valueSeries['vote_average'];?>
                 </div>
             </h3>
+            <div class="slider-single-title2">
+                            <form  method="POST" action="<?= base_url(); ?>/home/addWatchlist2">
+
+                                <input type="text" name="id-series" id="id-film" value="<?= $valueSeries['id']?>">
+
+                                <button type="submit" class="register-button" id="submit-watchlist">Add to Watchlist</button>
+                            </form>    
+                        </div>
         </div>
         <?php endforeach?>
 

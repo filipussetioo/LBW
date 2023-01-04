@@ -88,7 +88,7 @@ class Home extends BaseController
             $readApiStreamingMovies = file_get_contents("https://api.themoviedb.org/3/movie/$id/watch/providers?api_key=0c256b50796643e062ec0145360c47e9");
             $dataStreamingMovies = json_decode($readApiStreamingMovies,true);
             if(!empty($dataStreamingMovies['results'])&& !empty($dataStreamingMovies['results']['ID']) && !empty($dataStreamingMovies['results']['ID']['flatrate'])){
-                $streaming = $dataStreamingMovies['results']['ID']['flatrate']['provider_name'];
+                // $streaming = $dataStreamingMovies['results']['ID']['flatrate']['provider_name'];
                 foreach($dataStreamingMovies['results']['ID']['flatrate'] as $value){
                     $streaming = json_encode($value['provider_name']);
                 }
@@ -139,7 +139,7 @@ class Home extends BaseController
             $title = $dataSeries['name'];
             $readApiStreamingSeries = file_get_contents("https://api.themoviedb.org/3/tv/$id/watch/providers?api_key=0c256b50796643e062ec0145360c47e9");
             $dataStreamingSeries = json_decode($readApiStreamingSeries,true);
-            if(!empty($dataStreamingMovies['results'])&& !empty($dataStreamingMovies['results']['ID']) && !empty($dataStreamingMovies['results']['ID']['flatrate'])){
+            if(!empty($dataStreamingSeries['results'])&& !empty($dataStreamingSeries['results']['ID']) && !empty($dataStreamingSeries['results']['ID']['flatrate'])){
                 // $streaming = $dataStreamingMovies['results']['ID']['flatrate']['provider_name'];
                 foreach($dataStreamingSeries['results']['ID']['flatrate'] as $value){
                     $streaming = json_encode($value['provider_name']);

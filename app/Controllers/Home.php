@@ -75,7 +75,9 @@ class Home extends BaseController
         if(session()->get('name')==""){
             
             $message = "you have to login first!";
-            echo "<script type='text/javascript'>alert('$message');</script>";
+            echo "<script type='text/javascript'>
+            window.location.href='/';
+            alert('$message');</script>";
             return $this->index();
         }
         else{
@@ -108,7 +110,9 @@ class Home extends BaseController
             ]);
 
             if($insert){
-                echo "<script type='text/javascript'>alert('Item has been added to Watchlist');</script>";
+                echo "<script type='text/javascript'>
+                window.location.href='/';
+                alert('Item has been added to Watchlist');</script>";
                 return $this->index();
             }
             else {
@@ -124,8 +128,9 @@ class Home extends BaseController
     public function addWatchlist2(){
         if(session()->get('name')==""){
             $message = "you have to login first!";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-            return $this->index();
+            echo "<script type='text/javascript'>
+            window.location.href='/';
+            alert('$message');</script>";
         }
         else{
             $id = $this->request->getVar('id-series');
@@ -157,8 +162,9 @@ class Home extends BaseController
             ]);
 
             if($insert){
-                echo "<script type='text/javascript'>alert('Item has been added to Watchlist');</script>";
-                return $this->index();
+                echo "<script type='text/javascript'>
+                window.location.href='/';
+                alert('Item has been added to Watchlist');</script>";
             }
             else {
                 echo "<pre>";

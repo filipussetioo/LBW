@@ -23,10 +23,9 @@
     <!-- echo $rowData["watchlist_title"].'<br>'; -->
     <div>
         <h1>Recommended Streaming Platform</h1>
-            <p><?= 
-                $watchlist_streaming_data->streaming_platform
-                ?>
-            </P>
+        <?php if(!empty($watchlist_streaming_data)):?>
+            <p><?= $watchlist_streaming_data->streaming_platform?></p>
+        <?php endif?>
     </div>
 </body>
 </html>

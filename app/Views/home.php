@@ -96,7 +96,7 @@
 
 <div class="slider-container2">
     <div  id="trending-title">
-        <h1>Trending Series <?= session()->get('name'); ?></h1>
+        <h1>Trending Series</h1>
     </div>
     <div class="slider-content2">
         <?php foreach($dataSeries['results'] as $valueSeries):?>

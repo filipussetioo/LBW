@@ -30,6 +30,10 @@ class Watchlists extends Migration
 				'type'           => 'varchar',
 				'constraint'     => '100',
 			],
+			'backdrop_path' => [
+				'type' => 'varchar',
+				'constraint' => '1000'
+			]
  
 		]);
         $this->forge->addPrimaryKey('id',true);

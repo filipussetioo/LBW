@@ -14,14 +14,22 @@
     </div>
     <?php foreach($watchlist_data as $value):?>
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces" alt="Card image cap">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/<?= $value->backdrop_path?>" alt="Card image cap">
         <div class="card-body">
             <p class="card-text"><?= $value->watchlist_title ?></p>
         </div>
     </div>
     <?php endforeach; ?>
     <!-- echo $rowData["watchlist_title"].'<br>'; -->
-    
+    <div>
+        <h1>Recommended Streaming Platform</h1>
+        <?php foreach($watchlist_streaming_data as $value):?>
+            <p><?= 
+                $value->streaming_platform
+                ?>
+            </P>
+        <?php endforeach;?>
+    </div>
 
     
     

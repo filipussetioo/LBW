@@ -10,7 +10,7 @@ class Watchlist extends Model
     protected $primaryKey = "watchlistId";
 
     protected $returnType = "object";
-    protected $allowedFields = ['watchlistId','watchlist_title', 'streaming_platform', 'username'];
+    protected $allowedFields = ['watchlistId','watchlist_title', 'streaming_platform', 'username', 'backdrop_path'];
 
     public function getWatchlist()
 	{
@@ -19,5 +19,8 @@ class Watchlist extends Model
 
         return $watchlist;
 	}
-
+    public function getRecommendedStreamingPlatform(){
+        $db = \Config\Database::connect();
+        $watchlist = $db->table('watchlist')->selectCount('streaming_platform','jumlah')->groupBy('streaming_platform')->orderBy('streaming_platform','DESC')->get()->getResultArray();
+    }
 }

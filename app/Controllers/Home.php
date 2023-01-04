@@ -82,18 +82,33 @@ class Home extends BaseController
             $readApiMovies = file_get_contents("https://api.themoviedb.org/3/movie/$id?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US");
             $dataMovies = json_decode($readApiMovies,true);
             $watchlist = new Watchlist();
+            $idItem = $dataMovies['id'];
             $title = $dataMovies['original_title'];
-            $streaming= "netflix";
+            $readApiStreamingMovies = file_get_contents("https://api.themoviedb.org/3/movie/$id/watch/providers?api_key=0c256b50796643e062ec0145360c47e9");
+            $dataStreamingMovies = json_decode($readApiStreamingMovies,true);
+            if(!empty($dataStreamingMovies['results'] && !empty($dataStreamingMovies['result']['ID']))){
+                // $streaming = $dataStreamingMovies['results']['ID']['flatrate']['provider_name'];
+                foreach($dataStreamingMovies['results']['ID']['flatrate'] as $value){
+                    $streaming = json_encode($value['provider_name']);
+                }
+            }
+            else{
+                $streaming = "null";
+            }
             $username = session()->get('username');
+            $backdrop_path = $dataMovies['backdrop_path'];
             
             $insert = $watchlist->insert([
+                'watchlistId' => $id,
                 'watchlist_title' => $title,
                 'streaming_platform' =>$streaming,
-                'username' =>$username
+                'username' =>$username,
+                'backdrop_path'=>$backdrop_path
             ]);
 
             if($insert){
-                echo "Data Berhasil diinsert";
+                echo "<script type='text/javascript'>alert('Item has been added to Watchlist');</script>";
+                //return redirect()->to('/');
             }
             else {
                 echo "<pre>";

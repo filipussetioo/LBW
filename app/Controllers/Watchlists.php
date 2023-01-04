@@ -23,9 +23,7 @@ class Watchlists extends BaseController
 
         $readApiSeries = file_get_contents('https://api.themoviedb.org/3/tv/popular?api_key=0c256b50796643e062ec0145360c47e9&language=en-US&page=1');
         $dataSeries = json_decode($readApiSeries,true);
-        // $data_array = array(
-        //     'datalist' => $data
-        // );
+
         $username = session()->get('username');
         $db = \Config\Database::connect();
         $builder = $db->table('watchlist');
@@ -37,8 +35,12 @@ class Watchlists extends BaseController
         $builder_streaming = $db->table('watchlist');
         $builder_streaming->selectCount('streaming_platform')->select('streaming_platform')->groupBy('streaming_platform')->orderBy('streaming_platform','desc')->limit(2,0);
         $watchlist_streaming_data = $builder_streaming->get()->getResult();
-        // $watchlist_data = json_decode($watchlist_data);
-        
+            if($watchlist_streaming_data[0]->streaming_platform == 'null'){
+                $watchlist_streaming_data = $watchlist_streaming_data[1];
+            }
+            else{
+                $watchlist_streaming_data = $watchlist_streaming_data;
+            };
         return view('watchlist.php',[
             'data' => $data,
             'dataMovies' => $dataMovies,

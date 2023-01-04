@@ -23,15 +23,10 @@
     <!-- echo $rowData["watchlist_title"].'<br>'; -->
     <div>
         <h1>Recommended Streaming Platform</h1>
-        <?php foreach($watchlist_streaming_data as $value):?>
             <p><?= 
-                $value->streaming_platform
+                $watchlist_streaming_data->streaming_platform
                 ?>
             </P>
-        <?php endforeach;?>
     </div>
-
-    
-    
 </body>
 </html>

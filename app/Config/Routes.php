@@ -44,6 +44,7 @@ $routes->get('/watchlist', 'Watchlists::index');
 $routes->get('/home/logout', 'Home::logout');
 $routes->post('/home/login', 'Home::login');
 $routes->post('/home/addWatchlist', 'Home::addWatchlist');
+$routes->post('/home/addWatchlist2', 'Home::addWatchlist2');
 
 
 /*

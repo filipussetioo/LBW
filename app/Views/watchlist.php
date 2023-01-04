@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +10,6 @@
 <body>
     <?= view('template/navbar.php', ['css_dependencies' => ['']]) ?>
     <div class="wrapper">
-        <!-- <div class="wrapper-title">
-            <h1>Your Watchlist</h1>
-        </div> -->
         <div class="wrapper-title">
             <p>Recommended Streaming Platform</p>
             <?php if(!empty($watchlist_streaming_data)):?>
@@ -36,8 +32,6 @@
                 </div>
             <?php endforeach; ?>
         </div>
-    <!-- echo $rowData["watchlist_title"].'<br>'; -->
-    
     </div>
 </body>
 </html>

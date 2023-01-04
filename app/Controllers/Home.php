@@ -19,18 +19,12 @@ class Home extends BaseController
     public function index()
     {
         $readApiMovies = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US&page=1');
-
-        $data = json_decode($readApiMovies,true);
+        $dataMovies = json_decode($readApiMovies,true);
 
         $apiSeries = file_get_contents('https://api.themoviedb.org/3/tv/popular?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US&page=1');
         $dataSeries = json_decode($apiSeries,true);
-        $dataMovies = json_decode($readApiMovies,true);
-
-        $readApiSeries = file_get_contents('https://api.themoviedb.org/3/tv/popular?api_key=0c256b50796643e062ec0145360c47e9&language=en-US&page=1');
-        $dataSeries = json_decode($readApiSeries,true);
 
         return view('home.php',[
-            'data' => $data,
             'dataMovies' => $dataMovies,
             'dataSeries' => $dataSeries,
         ]);
@@ -83,12 +77,10 @@ class Home extends BaseController
             $readApiMovies = file_get_contents("https://api.themoviedb.org/3/movie/$id?api_key=4d039461c194e3b4f6c776c5cd99d7c1&language=en-US");
             $dataMovies = json_decode($readApiMovies,true);
             $watchlist = new Watchlist();
-            $idItem = $dataMovies['id'];
             $title = $dataMovies['original_title'];
             $readApiStreamingMovies = file_get_contents("https://api.themoviedb.org/3/movie/$id/watch/providers?api_key=0c256b50796643e062ec0145360c47e9");
             $dataStreamingMovies = json_decode($readApiStreamingMovies,true);
             if(!empty($dataStreamingMovies['results'])&& !empty($dataStreamingMovies['results']['ID']) && !empty($dataStreamingMovies['results']['ID']['flatrate'])){
-                // $streaming = $dataStreamingMovies['results']['ID']['flatrate']['provider_name'];
                 foreach($dataStreamingMovies['results']['ID']['flatrate'] as $value){
                     $streaming = json_encode($value['provider_name']);
                 }
@@ -135,12 +127,10 @@ class Home extends BaseController
             $readApiSeries = file_get_contents("https://api.themoviedb.org/3/tv/$id?api_key=0c256b50796643e062ec0145360c47e9&language=en-US");
             $dataSeries = json_decode($readApiSeries,true);
             $watchlist = new Watchlist();
-            $idItem = $dataSeries['id'];
             $title = $dataSeries['name'];
             $readApiStreamingSeries = file_get_contents("https://api.themoviedb.org/3/tv/$id/watch/providers?api_key=0c256b50796643e062ec0145360c47e9");
             $dataStreamingSeries = json_decode($readApiStreamingSeries,true);
             if(!empty($dataStreamingSeries['results'])&& !empty($dataStreamingSeries['results']['ID']) && !empty($dataStreamingSeries['results']['ID']['flatrate'])){
-                // $streaming = $dataStreamingMovies['results']['ID']['flatrate']['provider_name'];
                 foreach($dataStreamingSeries['results']['ID']['flatrate'] as $value){
                     $streaming = json_encode($value['provider_name']);
                 }

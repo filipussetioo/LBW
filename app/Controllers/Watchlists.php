@@ -15,7 +15,6 @@ class Watchlists extends BaseController
         $db = \Config\Database::connect();
         $builder = $db->table('watchlist');
         $builder->select('watchlistId');
-        $id = $builder->get()->getResultArray();
 
         $username = session()->get('username');
         $db = \Config\Database::connect();
@@ -25,6 +24,7 @@ class Watchlists extends BaseController
 
         $watchlist_data = $builder->get()->getResult();
 
+        //db function for checking ott
         $builder_streaming = $db->table('watchlist');
         $builder_streaming->selectCount('streaming_platform')->select('streaming_platform');
         $builder_streaming->where('username',$username);

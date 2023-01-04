@@ -37,7 +37,7 @@ class Watchlists extends BaseController
         $builder_streaming->where('username',$username);
         $builder_streaming->groupBy('streaming_platform')->orderBy('streaming_platform','desc')->limit(2,0);
         $watchlist_streaming_data = $builder_streaming->get()->getResult();
-            if(isset($watchlist_streaming_data)){
+            if(empty($watchlist_streaming_data)){
                 $watchlist_streaming_data = $watchlist_streaming_data;
             }
             elseif($watchlist_streaming_data[0]->streaming_platform == 'null'){

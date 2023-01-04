@@ -111,7 +111,7 @@
             <h3 class="slider-single-title2 bot">
                 <div class="slider-single-detail2 text">
                     <?php if(!empty($valueSeries['overview'])): ?>
-                        <?= $value['overview']?>
+                        <?= $valueSeries['overview']?>
                     <?php endif;?>
                     <?php if(empty($valueSeries['overview'])): ?>
                         <p>Deskripsi untuk film ini belum tersedia.</p>

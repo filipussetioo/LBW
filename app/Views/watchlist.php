@@ -15,10 +15,9 @@
         </div> -->
         <div class="wrapper-title">
             <p>Recommended Streaming Platform</p>
-            <h2>
-                <?=substr($watchlist_streaming_data->streaming_platform,1,strlen($watchlist_streaming_data->streaming_platform)-2)?>
-            </h2>
-                
+            <?php if(!empty($watchlist_streaming_data)):?>
+                <h2><?=substr($watchlist_streaming_data->streaming_platform,1,strlen($watchlist_streaming_data->streaming_platform)-2)?></h2>
+            <?php endif?>
         </div>
         <div class="watchlist-container">
             <?php foreach($watchlist_data as $value):?>

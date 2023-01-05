@@ -960,7 +960,7 @@ body{
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
 }
 .card{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -970,6 +970,7 @@ body{
   /* padding-bottom: 18%; */
   margin-bottom: 2%;
   overflow-x: hidden;
+  margin-left: 1%;
 }
 .card img{
   width:500px;

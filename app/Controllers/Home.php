@@ -100,9 +100,9 @@ class Home extends BaseController
             ]);
 
             if($insert){
-                echo "<script type='text/javascript'>
-                window.location.href='/';
-                alert('Item has been added to Watchlist');</script>";
+                // echo "<script type='text/javascript'>
+                // window.location.href='/';
+                // alert('Item has been added to Watchlist');</script>";
                 return $this->index();
             }
             else {
